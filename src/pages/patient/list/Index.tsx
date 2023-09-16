@@ -1,11 +1,5 @@
-import { MainCenterLayout } from "../../../components/ui/containers/styles"
-
 const PatientListPage = () => {
-  return (
-    <MainCenterLayout>
-      <p>Lista de pacientes</p>
-    </MainCenterLayout>
-  )
+  return <p>Lista de pacientes</p>
 }
 
 export default PatientListPage

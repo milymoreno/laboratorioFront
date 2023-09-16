@@ -22,7 +22,8 @@
     "twin.macro": "^3.4.0",
     "validator": "^13.11.0",
     "vite-plugin-babel-macros": "^1.0.6",
-    "vite-plugin-svgr": "^3.2.0"
+    "vite-plugin-svgr": "^3.2.0",
+    "zustand": "^4.4.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
