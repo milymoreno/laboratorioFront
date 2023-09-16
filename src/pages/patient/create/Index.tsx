@@ -10,8 +10,10 @@ import { LabelForm, MainTitle } from '../../../components/ui/text/styles'
 import { type ICreateNewPatient, initPatientValueForm, LABEL_INPUT_FORM } from './initValueForm'
 import { NOTIFY } from '../../../utils/notify/Index'
 import { CustomButton } from '../../../components/ui/buttons/styled'
+import { patientActionStore } from '../../../store/patients/actions'
 
 const PatientCreatePage = () => {
+  const { registerNewPatient } = patientActionStore
   const [patientState, setPatientState] = React.useState(initPatientValueForm)
 
   const fieldsToValidateAverage = ['fatAverage', 'suggarAverage', 'oxygenAverage']
@@ -26,7 +28,9 @@ const PatientCreatePage = () => {
     'oxygenAverage',
   ]
 
-  const handleChangeInput = (e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLSelectElement>) => {
+  const handleChangeInput = (
+    e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLSelectElement>,
+  ) => {
     let { name, value } = e.target
 
     // Resetear valores de porcentajes
@@ -69,7 +73,9 @@ const PatientCreatePage = () => {
     })
 
     if (isValid) {
-      console.log('TODO CORRECTO')
+      registerNewPatient(patientState)
+      setPatientState(initPatientValueForm)
+      NOTIFY.SUCCESS('Un nuevo paciente ha sido registrado')
     }
   }
 
@@ -79,7 +85,11 @@ const PatientCreatePage = () => {
       <ContainerInputForm>
         <FormGroup>
           <LabelForm>Tipo de Documento</LabelForm>
-          <CustomSelect name="documentType" value={patientState.documentType} onChange={handleChangeInput}>
+          <CustomSelect
+            name="documentType"
+            value={patientState.documentType}
+            onChange={handleChangeInput}
+          >
             <option value="">Selecciona un tipo de documento</option>
             <option value="CC">Cédula</option>
             <option value="CP">Pasaporte</option>
