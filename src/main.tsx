@@ -1,7 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
-import './index.css'
 
 // Como estamos usando client-side-rendering es posible que el elemento root no esté disponible por alguna situación, creamos esta validacion para saber en caso de que suceda.
 const renderApp = (rootElement: HTMLElement | null) => {
