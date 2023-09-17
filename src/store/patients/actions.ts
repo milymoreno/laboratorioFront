@@ -10,16 +10,6 @@ const apiURL = 'http://127.0.0.1:3333'
 // Actions
 const { setState } = usePatientStore
 
-const registerNewPatient = (patient: ICreateNewPatient) => {
-  setState(
-    produce((state: IPatientStore) => {
-      state.patients.push(patient)
-    }),
-    false,
-    'REGISTER_NEW_PATIENT',
-  )
-}
-
 const getAllPatient = async () => {
   try {
     const response: IResponseGetAllPatients = await axios.get(`${apiURL}/patients`)
@@ -46,7 +36,6 @@ const createNewPatient = async (patient: ICreateNewPatient) => {
   }
 }
 export const patientActionStore = {
-  registerNewPatient,
   getAllPatient,
   createNewPatient,
 }
