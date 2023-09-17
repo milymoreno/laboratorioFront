@@ -24,7 +24,8 @@ const PatientListPage = () => {
 
   const filteredData = patientState.filter((patient: ICreateNewPatient) => {
     // Filtrar por el nombre y otros campos que desees aquí
-    return patient.firstName.toLowerCase().includes(filterText.toLowerCase())
+    console.log('HERE', patient)
+    return patient.first_name.toLowerCase().includes(filterText.toLowerCase())
   })
 
   return (

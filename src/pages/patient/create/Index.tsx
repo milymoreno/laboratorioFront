@@ -16,16 +16,16 @@ const PatientCreatePage = () => {
   const { registerNewPatient } = patientActionStore
   const [patientState, setPatientState] = React.useState(initPatientValueForm)
 
-  const fieldsToValidateAverage = ['fatAverage', 'suggarAverage', 'oxygenAverage']
+  const fieldsToValidateAverage = ['fat_average', 'suggar_average', 'oxygen_average']
 
   const allFieldsRequired = [
-    'documentType',
-    'documentId',
-    'firstName',
-    'secondName',
-    'fatAverage',
-    'suggarAverage',
-    'oxygenAverage',
+    'document_type',
+    'document_id',
+    'first_name',
+    'second_name',
+    'fat_average',
+    'suggar_average',
+    'oxygen_average',
   ]
 
   const handleChangeInput = (
@@ -86,8 +86,8 @@ const PatientCreatePage = () => {
         <FormGroup>
           <LabelForm>Tipo de Documento</LabelForm>
           <CustomSelect
-            name="documentType"
-            value={patientState.documentType}
+            name="document_type"
+            value={patientState.document_type}
             onChange={handleChangeInput}
           >
             <option value="">Selecciona un tipo de documento</option>
@@ -99,8 +99,8 @@ const PatientCreatePage = () => {
         <FormGroup>
           <LabelForm>Número de documento</LabelForm>
           <CustomInput
-            name="documentId"
-            value={patientState.documentId}
+            name="document_id"
+            value={patientState.document_id}
             autoComplete="false"
             className="border border-gray-300 focus:outline-none p-1 shadow-sm"
             type="number"
@@ -110,8 +110,8 @@ const PatientCreatePage = () => {
         <FormGroup>
           <LabelForm>Nombre</LabelForm>
           <CustomInput
-            name="firstName"
-            value={patientState.firstName}
+            name="first_name"
+            value={patientState.first_name}
             autoComplete="false"
             className="border border-gray-300 focus:outline-none p-1 shadow-sm"
             type="text"
@@ -121,8 +121,8 @@ const PatientCreatePage = () => {
         <FormGroup>
           <LabelForm>Apellido</LabelForm>
           <CustomInput
-            name="secondName"
-            value={patientState.secondName}
+            name="second_name"
+            value={patientState.second_name}
             autoComplete="false"
             className="border border-gray-300 focus:outline-none p-1 shadow-sm"
             type="text"
@@ -132,8 +132,8 @@ const PatientCreatePage = () => {
         <FormGroup>
           <LabelForm>Porcetaje de grasa</LabelForm>
           <CustomInput
-            name="fatAverage"
-            value={patientState.fatAverage}
+            name="fat_average"
+            value={patientState.fat_average}
             autoComplete="false"
             className="border border-gray-300 focus:outline-none p-1 shadow-sm"
             type="number"
@@ -143,8 +143,8 @@ const PatientCreatePage = () => {
         <FormGroup>
           <LabelForm>Porcentaje de Azucar</LabelForm>
           <CustomInput
-            name="suggarAverage"
-            value={patientState.suggarAverage}
+            name="suggar_average"
+            value={patientState.suggar_average}
             autoComplete="false"
             className="border border-gray-300 focus:outline-none p-1 shadow-sm"
             type="number"
@@ -154,8 +154,8 @@ const PatientCreatePage = () => {
         <FormGroup>
           <LabelForm>Porcentaje de Oxigeno</LabelForm>
           <CustomInput
-            name="oxygenAverage"
-            value={patientState.oxygenAverage}
+            name="oxygen_average"
+            value={patientState.oxygen_average}
             autoComplete="false"
             className="border border-gray-300 focus:outline-none p-1 shadow-sm"
             type="number"
