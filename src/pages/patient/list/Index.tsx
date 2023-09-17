@@ -26,8 +26,7 @@ const PatientListPage = () => {
 
   const filteredData = patientState.filter((patient: ICreateNewPatient) => {
     // Filtrar por el nombre y otros campos que desees aquí
-    console.log('HERE', patient)
-    return patient.first_name.toLowerCase().includes(filterText.toLowerCase())
+    return patient.document_id.toLowerCase().includes(filterText.toLowerCase())
   })
 
   React.useEffect(() => {
@@ -39,7 +38,7 @@ const PatientListPage = () => {
       <MainTitle>Lista de pacientes</MainTitle>
       <div className="w-[80%] mx-auto shadow-md flex flex-col gap-2">
         <FormGroup>
-          <LabelForm>Filtrar por nombre</LabelForm>
+          <LabelForm>Filtrar numero de documento</LabelForm>
           <CustomInput
             type="text"
             placeholder="Buscar por nombre..."
