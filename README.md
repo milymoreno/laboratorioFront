@@ -9,19 +9,19 @@ Currently, two official plugins are available:
 
 # Guia para correr el proyecto
 - Instalar las dependencias del proyecto:
+``` 
+npm install 
 ```
-$ npm install
 
-Todas las dependencias del proyecto fueron instaladas con la versión de node establecida en el .nvmrc (v18.17.1) en caso de tener nvm instalado utilizar
-
-$ nvm use // Para instalar la versión de node establecida
-$ npm install
+- Adicional: Todas las dependencias del proyecto fueron instaladas con la versión de node establecida en el .nvmrc (v18.17.1) en caso de tener nvm instalado utilizar
+```
+nvm use
+npm install
  ```
 
 - Iniciar aplicación:
 ```
 $ npm run dev
-
  ```
 
 # Estructura del proyecto
