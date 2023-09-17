@@ -41,7 +41,7 @@ const PatientListPage = () => {
           <LabelForm>Filtrar numero de documento</LabelForm>
           <CustomInput
             type="text"
-            placeholder="Buscar por nombre..."
+            placeholder="Buscar por numero de documento..."
             value={filterText}
             onChange={e => {
               setFilterText(e.target.value)
