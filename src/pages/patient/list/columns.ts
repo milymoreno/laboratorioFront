@@ -29,4 +29,8 @@ export const columnsPatient = [
     name: '% Oxigeno',
     selector: (row: ICreateNewPatient) => row.oxygen_average,
   },
+  {
+    name: 'Nivel de Riesgo',
+    selector: (row: ICreateNewPatient) => row.risk,
+  },
 ]

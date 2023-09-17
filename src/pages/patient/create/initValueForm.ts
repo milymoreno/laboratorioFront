@@ -6,6 +6,7 @@ export interface ICreateNewPatient {
   fat_average: string | number
   suggar_average: string | number
   oxygen_average: string | number
+  risk: string
 
 }
 export const initPatientValueForm: ICreateNewPatient = {
@@ -16,6 +17,7 @@ export const initPatientValueForm: ICreateNewPatient = {
   fat_average: '',
   suggar_average: '',
   oxygen_average: '',
+  risk: ''
 }
 
 export const LABEL_INPUT_FORM: ICreateNewPatient = {
@@ -26,4 +28,5 @@ export const LABEL_INPUT_FORM: ICreateNewPatient = {
   fat_average: 'Porcentaje de grasa',
   suggar_average: 'Porcentaje de azucar',
   oxygen_average: 'Porcentaje de oxigeno',
+  risk: 'Nivel de Riesgo'
 }

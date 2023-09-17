@@ -1,14 +1,16 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import DataTable from 'react-data-table-component'
 import { columnsPatient } from './columns'
 import { usePatientStore } from '../../../store/patients/store'
 import { LabelForm, MainTitle } from '../../../components/ui/text/styles'
 import { type ICreateNewPatient } from '../create/initValueForm'
 import { CustomInput, FormGroup } from '../../../components/ui/containers/styles'
+import { patientActionStore } from '../../../store/patients/actions'
 
 const PatientListPage = () => {
   const patientState = usePatientStore(state => state.patients)
   const [filterText, setFilterText] = useState('') // Estado para el término de búsqueda
+  const actions = patientActionStore
 
   const paginationPerPage = 10
   const paginationComponentOptions = {
@@ -27,6 +29,10 @@ const PatientListPage = () => {
     console.log('HERE', patient)
     return patient.first_name.toLowerCase().includes(filterText.toLowerCase())
   })
+
+  React.useEffect(() => {
+    void actions.getAllPatient()
+  }, [])
 
   return (
     <div className="flex flex-col gap-3 items-center pt-20">

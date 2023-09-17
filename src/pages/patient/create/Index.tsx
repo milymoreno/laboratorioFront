@@ -13,8 +13,8 @@ import { CustomButton } from '../../../components/ui/buttons/styled'
 import { patientActionStore } from '../../../store/patients/actions'
 
 const PatientCreatePage = () => {
-  const { registerNewPatient } = patientActionStore
   const [patientState, setPatientState] = React.useState(initPatientValueForm)
+  const action = patientActionStore
 
   const fieldsToValidateAverage = ['fat_average', 'suggar_average', 'oxygen_average']
 
@@ -73,9 +73,15 @@ const PatientCreatePage = () => {
     })
 
     if (isValid) {
-      registerNewPatient(patientState)
-      setPatientState(initPatientValueForm)
-      NOTIFY.SUCCESS('Un nuevo paciente ha sido registrado')
+      void action.createNewPatient(patientState).then((response) => {
+        if(!response.success){
+          NOTIFY.ERROR(`${response.message}`)
+          return
+        }
+        
+        setPatientState(initPatientValueForm)
+        NOTIFY.SUCCESS('Un nuevo paciente ha sido registrado')
+      })
     }
   }
 
@@ -91,9 +97,9 @@ const PatientCreatePage = () => {
             onChange={handleChangeInput}
           >
             <option value="">Selecciona un tipo de documento</option>
-            <option value="CC">Cédula</option>
-            <option value="CP">Pasaporte</option>
-            <option value="CE">Extranjero</option>
+            <option value="Cédula">Cédula</option>
+            <option value="Pasaporte">Pasaporte</option>
+            <option value="Extranjero">Extranjero</option>
           </CustomSelect>
         </FormGroup>
         <FormGroup>
