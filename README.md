@@ -8,6 +8,16 @@ npm install
 ```
 nvm use
 npm install
+
+ ```
+- El proyecto tiene una Url de API establecida para que funcione con un backend en producción, en caso de querer probar de manera local cambiar los valores de esa constante
+
+
+```
+<!-- Ruta -->
+src/store/patients/actions.ts
+
+Linea 8: const apiURL = 'https://laboratorio-back.onrender.com'
  ```
 
 - Iniciar aplicación:
