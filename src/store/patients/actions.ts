@@ -5,7 +5,7 @@ import { type IPatientStore } from './types'
 import axios from 'axios'
 import { type IResponseGetAllPatients } from '../types'
 
-const apiURL = 'http://127.0.0.1:3333'
+const apiURL = 'https://laboratorio-back.onrender.com/patients'
 
 // Actions
 const { setState } = usePatientStore
